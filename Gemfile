@@ -56,5 +56,5 @@ gem 'thin'
 gem 'rails-erd'
 #sudo apt-get install graphviz
 gem 'annotate'
-gem 'activeadmin', github: 'activeadmin/activeadmin'
-gem 'devise'
+gem "typus", github: "typus/typus"
+# gem 'devise'
