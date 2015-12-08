@@ -1,0 +1,61 @@
+<%= form_for(@store) do |f| %>
+  <% if @store.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@store.errors.count, "error") %> prohibited this store from being saved:</h2>
+
+      <ul>
+      <% @store.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :store_name, "名前" %><br>
+    <%= f.text_field :store_name %>
+  </div>
+  <div class="field">
+    <%= f.label :stor_catch, "キャッチコピー"  %><br>
+    <%= f.text_field :stor_catch %>
+  </div>
+  <div class="field">
+    <%= f.label :store_genre, "ジャンル"  %><br>
+    <%= f.text_field :store_genre %>
+  </div>
+  <div class="field">
+    <%= f.label :store_area, "エリア"  %><br>
+    <%= f.text_field :store_area %>
+  </div>
+  <div class="field">
+    <%= f.label :store_description, "説明"  %><br>
+    <%= f.text_area :store_description %>
+  </div>
+  <div class="field">
+    <%= f.label :store_address, "所在地"  %><br>
+    <%= f.text_area :store_address %>
+  </div>
+  <div class="field">
+    <%= f.label :store_access, "交通手段"  %><br>
+    <%= f.text_field :store_access %>
+  </div>
+  <div class="field">
+    <%= f.label :store_tel, "TEL"  %><br>
+    <%= f.text_field :store_tel %>
+  </div>
+  <div class="field">
+    <%= f.label :store_email, "E-MAIL"  %><br>
+    <%= f.text_field :store_email %>
+  </div>
+  <div class="field">
+    <%= f.label :storeurl, "URL"  %><br>
+    <%= f.text_field :storeurl %>
+  </div>
+  <div class="field">
+    <%= f.label :store_movie, "紹介動画"  %><br>
+    <%= f.text_field :store_movie %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

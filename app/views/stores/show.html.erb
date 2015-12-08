@@ -1,0 +1,62 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<p>
+  <strong>Store name:</strong>
+  <%= @store.store_name %>
+</p>
+
+<p>
+  <strong>Stor catch:</strong>
+  <%= @store.stor_catch %>
+</p>
+
+<p>
+  <strong>Store genre:</strong>
+  <%= @store.store_genre %>
+</p>
+
+<p>
+  <strong>Store area:</strong>
+  <%= @store.store_area %>
+</p>
+
+<p>
+  <strong>Store description:</strong>
+  <%= @store.store_description %>
+</p>
+
+<p>
+  <strong>Store address:</strong>
+  <%= @store.store_address %>
+</p>
+
+<p>
+  <strong>Store access:</strong>
+  <%= @store.store_access %>
+</p>
+
+<p>
+  <strong>TEL:</strong>
+  <%= @store.store_tel %>
+</p>
+
+<p>
+  <strong>E-mail:</strong>
+  <%= @store.store_email %>
+</p>
+
+<p>
+  <strong>URL:</strong>
+  <%= @store.storeurl %>
+</p>
+
+<p>
+  <strong>Store movie:</strong>
+  <%= @store.store_movie %>
+</p>
+<p><%= link_to 'Destroy', store_path, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+<%= link_to 'Edit', edit_store_path(@store) %> |
+<%= link_to 'Back', stores_path %>

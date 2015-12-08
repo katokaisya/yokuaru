@@ -1,14 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Yokuaru</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class='<%= controller.controller_name %>'>
+<!-- ナビゲーションバー -->
+<nav class="paradeiser"><%= image_tag("logo.png", alt: "Logo", class: "paradeiser_logo") %>
+<%#= link_to (image_tag("logo.png", alt: "Logo", class: "paradeiser_logo")), store_path %>
+    <a href="expendables.html">
+        <div class="paradeiser_icon_canvas">
+            expendables
+        </div>
+        <span>よく使うもの</span>
+    </a>
+    <a href="new_item.html">
+        <div class="paradeiser_icon_canvas">
+            new item
+        </div>
+        <span>新商品</span>
+    </a>
+    <a href="gem_item.html">
+        <div class="paradeiser_icon_canvas">
+            gem item
+        </div>
+        <span>逸品文房具</span>
+    </a>
+    <div class="paradeiser_dropdown">
+        <a href="#paradeiser-more" id="paradeiser-dropdown">
+            <div class="paradeiser_icon_canvas">
+                三
+            </div>
+            <span>More</span>
+        </a>
+        <ul class="paradeiser_children" id="paradeiser-more">
+            <li><a href="expendables.html">Terms of Service</a></li>
+            <li><a href="about.html">会社案内</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li id="greybox"><a href="#!"></a></li>
+        </ul>
+    </div>
+</nav>
+<!-- ナビゲーションバー -->
+<div id="box1">
+  <%= image_tag("logo.png") %>
+  <%= @page_title || t('.title') %>
+</div>
+<div id="box2"><!-- main(メイン) -->
+  <div id="main"><!--メインカラム-->
+    <%= yield %>
+  </div><!--メインカラム-->
+  <div id="sub"><!--サイドバー-->
+    <aside>
+        <div id="side">
+          <div id="cart">
+            <%#= render @cart %>
+          </div>
+          <p><%= @time %></p>
+          <ul>
+            <li><%#= link_to t('.home'), store_path %></li>
+            <li><a href="http://www..../faq"><%= t('.questions') %></a></li>
+            <li><a href="http://www..../news"><%= t('.news') %></a></li>
+            <li><a href="http://www..../contact"><%= t('.contact') %></a></li>
+            <%  if @cart %>
+            <li><%= link_to t('.show'), cart_path(@cart) %></li>
+            <% end %>
+          </ul>
+<!--サイドバー管理機能の追加-->
+          <% if session[:user_id] %>
+          <p><%= @user.name %></p>
+          <ul>
+            <li><%= link_to '注文',   orders_path %></li>
+            <li><%= link_to '商品',   products_path %></li>
+            <li><%= link_to 'ユーザー',   users_path %></li>
+          </ul>
+          <%= button_to 'ログアウト', logout_path,method: :delete %>
+          <% end %>
+<!--サイドバー管理機能の追加-->
+          <p><span class="red"><%= @counter %></span></p>
+        </div><!--id="side"-->
+    </aside>
+  </div><!--サイドバー-->
+</div><!-- main(メイン) -->
 
-<%= yield %>
+<!--フッター部分-->
+<div id="box3">
+<footer>
+  <p id="pagetop" class="btn01 cleafix"><a href="#top">&and;ページの先頭へ&and;</a></p>
+    <address><a href="admin">&copy;</a> YOKUARU shop KATO</address>
+  <p id="pageback" class="btn01 cleafix"><a href="javascript:history.go(-1)">&lt;&lt;前ページに戻る</a></p>
+</footer>
+</div>
+<!--フッター部分-->
+<script src="/my.js"></script>
 
 </body>
 </html>
