@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  resources :stores
+  # get "store/index"
+   resources :stores
+  # get 'stores/new', as: :store
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+    root 'stores#index'#, as: 'store'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -13,15 +16,18 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    # resources :products
+    # get 'products/index'
+    # get 'products/show'
 
   # Example resource route with options:
   #   resources :products do
+  ##                      追加のパス（ID付）
   #     member do
   #       get 'short'
   #       post 'toggle'
   #     end
-  #
+  ##                      追加のパス（IDなし）
   #     collection do
   #       get 'sold'
   #     end
@@ -49,9 +55,9 @@ Rails.application.routes.draw do
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+    # namespace :admin do
+    #   # Directs /admin/products/* to Admin::ProductsController
+    #   # (app/controllers/admin/products_controller.rb)
+    #   resources :products
+    # end
 end
