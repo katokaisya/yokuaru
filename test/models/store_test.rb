@@ -16,6 +16,7 @@
 #  store_movie       :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  blog_id           :integer
 #
 
 require 'test_helper'

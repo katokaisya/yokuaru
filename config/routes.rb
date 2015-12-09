@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :blogs
   # get "store/index"
    resources :stores
   # get 'stores/new', as: :store

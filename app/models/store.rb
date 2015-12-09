@@ -16,7 +16,16 @@
 #  store_movie       :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  blog_id           :integer
 #
 
 class Store < ActiveRecord::Base
+  has_many :blogs
+
+
+  # def add_blog(blog)
+  #   blogs.each{|item|
+  #     item.blog_id=nil
+  #     blogs<<item}
+  # end
 end

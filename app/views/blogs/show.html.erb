@@ -1,0 +1,26 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<p>
+  <strong>Blog date:</strong>
+  <%= @blog.blog_date %>
+</p>
+
+<p>
+  <strong>Blog title:</strong>
+  <%= @blog.blog_title %>
+</p>
+
+<p>
+  <strong>Blog main:</strong>
+  <%= @blog.blog_main %>
+</p>
+
+<p>
+  <strong>Blog img:</strong>
+  <%= @blog.blog_img %>
+</p>
+
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', store_path %>

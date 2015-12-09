@@ -5,3 +5,104 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#  id                :integer          not null, primary key
+#  store_name        :string
+#  stor_catch        :string
+#  store_genre       :string
+#  store_area        :string
+#  store_description :text
+#  store_address     :text
+#  store_access      :string
+#  store_tel         :string
+#  store_email       :string
+#  storeurl          :string
+#  store_movie       :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+# いったんきれいにお掃除する
+Store.delete_all
+
+# 新しく商品データを作成する
+Store.create([
+  {
+    id: 1,
+     store_name:'店名',
+     stor_catch:'キャッチコピー',
+     store_genre:'ジャンル',
+     store_area:'エリア',
+     store_description:'説明文の文章を長めに入れる',
+     store_address:'所在地県所在地市所在地町',
+     store_access:'交通手段',
+     store_tel:'090-0000-0000',
+     store_email:'aaa@bbb',
+     storeurl:'http://www.google.co.jp',
+     store_movie:'youtube!'
+  },
+  {
+    id: 2,
+     store_name:'店名2',
+     stor_catch:'キャッチコピー2',
+     store_genre:'ジャンル2',
+     store_area:'エリア2',
+     store_description:'説明文の文章を長めに入れる2',
+     store_address:'所在地県所在地市所在地町2',
+     store_access:'交通手段2',
+     store_tel:'090-0000-0000',
+     store_email:'aaa@bbb',
+     storeurl:'http://www.google.co.jp',
+     store_movie:'youtube!'  },
+  {
+    id: 3,
+     store_name:'店名3',
+     stor_catch:'キャッチコピー3',
+     store_genre:'ジャンル3',
+     store_area:'エリア3',
+     store_description:'説明文の文章を長めに入れる3',
+     store_address:'所在地県所在地市所在地町3',
+     store_access:'交通手段3',
+     store_tel:'090-0000-0000',
+     store_email:'aaa@bbb',
+     storeurl:'http://www.google.co.jp',
+     store_movie:'youtube!'  },
+  {
+    id: 4,
+     store_name:'店名4',
+     stor_catch:'キャッチコピー4',
+     store_genre:'ジャンル4',
+     store_area:'エリア4',
+     store_description:'説明文の文章を長めに入れる4',
+     store_address:'所在地県所在地市所在地町4',
+     store_access:'交通手段4',
+     store_tel:'090-0000-0000',
+     store_email:'aaa@bbb',
+     storeurl:'http://www.google.co.jp',
+     store_movie:'youtube!'  }
+  ])
+Blog.delete_all
+Blog.create([
+  {
+ id:1,
+ blog_date: ("09/11/2015 20:00:00"),
+ blog_title:'ブログを始めました',
+ blog_main:'ブログの本文です',
+ blog_img:'ブログの写真です.jpg',
+ store_id:1
+},
+  {
+ id:2,
+ blog_date: ("09/12/2015 20:00:00"),
+ blog_title:'ブログ２回目',
+ blog_main:'ブログの本文です',
+ blog_img:'ブログの写真です.jpg',
+ store_id:1
+},
+  {
+ id:3,
+ blog_date: ("09/11/2015 21:00:00"),
+ blog_title:'うちもブログを始めました',
+ blog_main:'ブログの本文だよ',
+ blog_img:'ブログの写真です.jpg',
+ store_id:2
+}
+  ])

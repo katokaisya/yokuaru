@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208025329) do
+ActiveRecord::Schema.define(version: 20151209064323) do
+
+  create_table "blogs", force: :cascade do |t|
+    t.datetime "blog_date"
+    t.string   "blog_title"
+    t.text     "blog_main"
+    t.string   "blog_img"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "store_id"
+  end
+
+  add_index "blogs", ["store_id"], name: "index_blogs_on_store_id"
 
   create_table "stores", force: :cascade do |t|
     t.string   "store_name"
@@ -27,6 +39,9 @@ ActiveRecord::Schema.define(version: 20151208025329) do
     t.string   "store_movie"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "blog_id"
   end
+
+  add_index "stores", ["blog_id"], name: "index_stores_on_blog_id"
 
 end

@@ -1,39 +1,18 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
+<article>
+  <div>
+    <h2><%= @store.store_name %><span><%= @store.store_area %></span></h2>
+    <h3><%= @store.stor_catch %><span><%= @store.store_genre %></span></h3>
+    <p>所在地：<%= @store.store_address %><span><%= tel_to "#{@store.store_tel}" %></span></p>
 
 <p>
-  <strong>Store name:</strong>
-  <%= @store.store_name %>
-</p>
-
-<p>
-  <strong>Stor catch:</strong>
-  <%= @store.stor_catch %>
-</p>
-
-<p>
-  <strong>Store genre:</strong>
-  <%= @store.store_genre %>
-</p>
-
-<p>
-  <strong>Store area:</strong>
-  <%= @store.store_area %>
-</p>
-
-<p>
-  <strong>Store description:</strong>
+  <strong>説明:</strong>
   <%= @store.store_description %>
 </p>
-
 <p>
-  <strong>Store address:</strong>
-  <%= @store.store_address %>
-</p>
-
-<p>
-  <strong>Store access:</strong>
+  <strong>行き方:</strong>
   <%= @store.store_access %>
 </p>
 
@@ -53,10 +32,29 @@
 </p>
 
 <p>
-  <strong>Store movie:</strong>
+  <strong>動画:</strong>
   <%= @store.store_movie %>
 </p>
+
+<h2>ブログ<span><%= @store.blogs.count %>件</span></h2>
+
+  <ul>
+    <% @store.blogs.each do |blog| %>
+        <li><%= link_to "#{blog.blog_title}",blog_path %>
+        <%= blog.blog_date %></li>
+    <% end %>
+  </ul>
+
+
 <p><%= link_to 'Destroy', store_path, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  </div>
+</article>
+
+
+
+
+
 
 <%= link_to 'Edit', edit_store_path(@store) %> |
+<%= link_to 'ブログを書く', new_blog_path(store_id: @store.id) %>
 <%= link_to 'Back', stores_path %>

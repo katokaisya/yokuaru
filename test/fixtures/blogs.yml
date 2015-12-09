@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: blogs
+#
+#  id         :integer          not null, primary key
+#  blog_date  :datetime
+#  blog_title :string
+#  blog_main  :text
+#  blog_img   :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  store_id   :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blog_date: 2015-12-09 04:42:29
+  blog_title: MyString
+  blog_main: MyText
+  blog_img: MyString
+
+two:
+  blog_date: 2015-12-09 04:42:29
+  blog_title: MyString
+  blog_main: MyText
+  blog_img: MyString
