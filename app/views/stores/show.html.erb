@@ -40,7 +40,7 @@
 
   <ul>
     <% @store.blogs.each do |blog| %>
-        <li><%= link_to "#{blog.blog_title}",blog_path %>
+        <li><%= link_to "#{blog.blog_title}",blog_path(blog) %>
         <%= blog.blog_date %></li>
     <% end %>
   </ul>

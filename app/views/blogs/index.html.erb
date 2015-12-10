@@ -1,33 +1,22 @@
+<% if notice %>
 <p id="notice"><%= notice %></p>
+<% end %>
 
-<h1>Listing Blogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Blog date</th>
-      <th>Blog title</th>
-      <th>Blog main</th>
-      <th>Blog img</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.blog_date %></td>
-        <td><%= blog.blog_title %></td>
-        <td><%= blog.blog_main %></td>
-        <td><%= blog.blog_img %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<h1>ブログ一覧</h1>
+    <% @blogs.each do |b| %>
+      <div>
+        <%= link_to store_path(b.store) do %>
+          <span><%= "#{b.store.store_name}" %></span></a>
+        <% end %>
+        <%#= link_to "#{b.store.store_name}", store_path(b.store) %>
+        <%= link_to b do %>
+          <span class="title"><b><%= b.blog_title %></b>|<%= b.blog_main %>|<%= b.blog_img %>|<%= b.blog_date %></span></a>
+        <% end %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
 <br>
 
-<%= link_to 'New Blog', new_blog_path %>
+<% x='<div><span>新しいブログを作る</span></div>' %>
+<%= link_to(x.html_safe, new_blog_path) %>
+
+
