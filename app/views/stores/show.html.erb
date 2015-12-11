@@ -38,12 +38,15 @@
 
 <h2>ブログ<span><%= @store.blogs.count %>件</span></h2>
 
-  <ul>
+  
     <% @store.blogs.each do |blog| %>
-        <li><%= link_to "#{blog.blog_title}",blog_path(blog) %>
-        <%= blog.blog_date %></li>
+        <%= link_to blog_path(blog) do %>
+          <h3><strong><%= "#{blog.blog_title}" %></strong>
+          <%= blog.blog_date.time.strftime("%Y年 %m月 %d日, %H:%M:%S") %>
+          </h3></a>
+        <% end %>
     <% end %>
-  </ul>
+  
 
 
 <p><%= link_to 'Destroy', store_path, method: :delete, data: { confirm: 'Are you sure?' } %></p>

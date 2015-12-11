@@ -1,12 +1,22 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
-<h1>店舗一覧</h1>
+<h1><%= "#{@store_area}" %><%= "#{@store_genre}" %>店舗一覧</h1>
   <article>
     <% @stores.each do |store| %>
       <div>
-        <h2><%= link_to "#{store.store_name}", store %><span><%= store.store_area %></span></h2>
-        <h3><%= store.stor_catch %><span><%= store.store_genre %></span></h3>
+        <h2>
+          <%= link_to "#{store.store_name}", store %>
+          <%= link_to stores_path(area: "#{store.store_area}") do %>
+            <span><%= "#{store.store_area}" %></span></a>
+          <% end %>
+        </h2>
+        <h3>
+          <%= store.stor_catch %>
+          <%= link_to stores_path(genre: "#{store.store_genre}") do %>
+            <span><%= "#{store.store_genre}" %></span></a>
+          <% end %>
+        </h3>
         <p>所在地：<%= store.store_address %><span><%= tel_to "#{store.store_tel}" %></span></p>
       </div>
     <% end %>

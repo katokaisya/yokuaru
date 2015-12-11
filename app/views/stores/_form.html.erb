@@ -21,12 +21,14 @@
   </div>
   <div class="field">
     <%= f.label :store_genre, "ジャンル"  %><br>
-    <%= f.text_field :store_genre %>
+    <%= f.select(:store_genre, options_for_select(["デザイン","プログラム","マーケティング","素材","写真","他"],"マーケティング")) %>
   </div>
+
   <div class="field">
-    <%= f.label :store_area, "エリア"  %><br>
-    <%= f.text_field :store_area %>
+    <%= f.label :store_area,"エリア" %><br>
+    <%= f.select(:store_area, options_for_select(["福岡","北九州","筑豊","筑後","糸島","他"],"福岡")) %>
   </div>
+
   <div class="field">
     <%= f.label :store_description, "説明"  %><br>
     <%= f.text_area :store_description %>

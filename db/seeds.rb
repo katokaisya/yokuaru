@@ -10,12 +10,14 @@
 Store.delete_all
 # 新しくStoreデータを作成する
 s_ary=[]
- 5.times do |no|
+ 10.times do |no|
+   y = ["福岡","北九州","筑豊","筑後","糸島"].sample
+   z = ["デザイン","プログラム","マーケティング","素材","写真"].sample
   s_hash={id: 1+no,
     store_name: "店名#{1+no}",
     stor_catch: "キャッチコピー#{1+no}",
-    store_genre: "ジャンル#{1+no}",
-    store_area: "エリア#{1+no}",
+    store_genre: z,
+    store_area: y,
     store_description:'説明文の文章を長めに入れる',
     store_address:'所在地県所在地市所在地町',
     store_access:'交通手段',
@@ -93,8 +95,8 @@ Blog.delete_all
 
 ary=[]
 
-5.times do |no|
-  x = [1,2,3,4,5].sample
+10.times do |no|
+  x = [1,2,3,4,5,6,7,8,9,10].sample
   hash={id: 1+no, blog_date: ("09/11/2015 20:00:00"), blog_title: "title#{1+no}",blog_main: "本文#{1+no}",blog_img:"#{1+no}.jpg",
  store_id:x }
  ary<<hash

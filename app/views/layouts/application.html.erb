@@ -12,24 +12,26 @@
 <!-- ナビゲーションバー -->
 <nav class="paradeiser"><%= image_tag("logo.png", alt: "Logo", class: "paradeiser_logo") %>
 <%#= link_to (image_tag("logo.png", alt: "Logo", class: "paradeiser_logo")), store_path %>
-    <a href="expendables.html">
+    <%= link_to stores_path do %>
         <div class="paradeiser_icon_canvas">
-            expendables
+            Stores
         </div>
-        <span>よく使うもの</span>
+        <span>店舗一覧</span>
     </a>
+    <% end %>
     <a href="new_item.html">
         <div class="paradeiser_icon_canvas">
             new item
         </div>
         <span>新商品</span>
     </a>
-    <a href="gem_item.html">
+    <%= link_to blogs_path do %>
         <div class="paradeiser_icon_canvas">
-            gem item
+            blogs
         </div>
-        <span>逸品文房具</span>
+        <span>ブログ</span>
     </a>
+    <% end %>
     <div class="paradeiser_dropdown">
         <a href="#paradeiser-more" id="paradeiser-dropdown">
             <div class="paradeiser_icon_canvas">

@@ -4,7 +4,15 @@ class StoresController < ApplicationController
   # GET /stores
   # GET /stores.json
   def index
-    @stores = Store.all
+    if params[:area]
+      @stores = Store.where(store_area: params[:area])
+      @store_area = params[:area]
+    elsif params[:genre]
+      @stores = Store.where(store_genre: params[:genre])
+      @store_genre = params[:genre]
+    else
+      @stores = Store.all
+    end
   end
 
   # GET /stores/1

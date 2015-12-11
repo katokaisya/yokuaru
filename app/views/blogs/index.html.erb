@@ -10,7 +10,7 @@
         <% end %>
         <%#= link_to "#{b.store.store_name}", store_path(b.store) %>
         <%= link_to b do %>
-          <span class="title"><b><%= b.blog_title %></b>|<%= b.blog_main %>|<%= b.blog_img %>|<%= b.blog_date %></span></a>
+          <span class="title"><b><%= b.blog_title %></b>|<%= b.blog_main %>|<%= b.blog_img %>|<%= b.blog_date.time.strftime("%Y年 %m月 %d日, %H:%M:%S") %></span></a>
         <% end %>
       </div>
     <% end %>
