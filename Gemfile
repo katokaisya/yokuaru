@@ -59,3 +59,4 @@ gem 'annotate'
 gem "typus", github: "typus/typus"
 # gem 'devise'
 gem 'tel_to_helper'
+gem 'faker-japanese'

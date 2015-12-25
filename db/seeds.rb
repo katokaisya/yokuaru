@@ -13,13 +13,14 @@ s_ary=[]
  10.times do |no|
    y = ["福岡","北九州","筑豊","筑後","糸島"].sample
    z = ["デザイン","プログラム","マーケティング","素材","写真"].sample
+   name = Faker::Japanese::Name.name
   s_hash={id: 1+no,
-    store_name: "店名#{1+no}",
+    store_name: "#{name} No.#{1+no}",
     stor_catch: "キャッチコピー#{1+no}",
     store_genre: z,
     store_area: y,
     store_description:'説明文の文章を長めに入れる',
-    store_address:'所在地県所在地市所在地町',
+    store_address:"#{y}市丸々町",
     store_access:'交通手段',
     store_tel:'090-0000-0000',
     store_email:'aaa@bbb',
